@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acerca De</title>
+  <link rel="website icon" type="png" href="img/Acerca-de.png" />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'magic-blue': '#3b82f6',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+    --primary: #03045e;
+    --secondary: blue;
+    --accent: #f05252;
+    --light: #f3f4f6;
+    --dark: #111827;
+    --success: #0e9f6e;
+    --warning: #ff5a1f;
+    --gray-100: #f9fafb;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-800: #1f2937;
+    --transition: all 0.3s ease;
+}
+
+.sigma{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 7rem;
+}
+
+.sig{
+    color: cyan;
+}
+
+section {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header y navegación */
+header {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.container {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.marquee-container {
+    background-color: #03045e;
+    color: whitesmoke;
+    padding: 0.5rem 0;
+    overflow: hidden;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+/* Banner principal */
+.hero {
+    margin-top: 76px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.hero .btn {
+    opacity: 0;
+    animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.typed-text {
+    font-weight: 600;
+    color: #fff;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('https://cdn.pixabay.com/photo/2017/03/10/22/48/abstract-2134823_1280.png');
+    background-size: 1000px 100px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--gray-100);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #6929d0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--dark);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Sección de tarjetas temáticas */
+.section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.section-header p {
+    color: var(--gray-500);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.card-content p {
+    color: var(--gray-500);
+    margin-bottom: 1.5rem;
+}
+
+.greek{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.math-formula {
+    background-color: var(--gray-100);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+    
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #f8f9fa;
+          color: #333;
+          padding: 2rem;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .equipo-IP {
+          font-family: poppins;
+          color: black;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem;
+        }
+
+        .text-2xl{
+          color: blue;
+        }
+
+        .text-magic-blue{
+          color: black;
+        }
+    
+        h1 {
+          text-align: center;
+          margin-bottom: 3rem;
+          font-weight: 600;
+          color: #2d3748;
+        }
+    
+        .cards-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          width: 100%;
+        }
+    
+        .card {
+          background-color: white;
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          transition: transform 0.3s ease;
+        }
+    
+        .card:hover {
+          transform: translateY(-5px);
+        }
+    
+        .card-image {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .card-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    
+        .card-content h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: #2d3748;
+          font-weight: 600;
+        }
+    
+        .card-content p {
+          color: #718096;
+          line-height: 1.6;
+          font-weight: 300;
+        }
+    
+        @media (max-width: 768px) {
+          .cards-grid {
+            grid-template-columns: 1fr;
+          }
+    
+          .container {
+            padding: 1rem;
+          }
+    
+          body {
+            padding: 1rem;
+          }
+        }
+  
+                body {
+                  font-family: 'Poppins', sans-serif;
+                }
+        
+                .card {
+                  transition: all 0.3s ease;
+                  border-radius: 0.5rem;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+        
+                .card:hover {
+                  transform: translateY(-5px);
+                  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                }
+        
+                .card:focus-within {
+                  outline: 2px solid black;
+                }
+        
+                .editable {
+                  outline: none;
+                  border-radius: 0.25rem;
+                  padding: 0.5rem;
+                  transition: background-color 0.2s;
+                }
+        
+                .editable:focus {
+                  background-color: rgba(59, 130, 246, 0.1);
+                }
+        
+                .card-image {
+                  border-radius: 50%;
+                  width: 80px;
+                  height: 80px;
+                  object-fit: cover;
+                  border: 3px solid white;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                  margin: 0 auto;
+                }
+        
+                @media (max-width: 768px) {
+                  .four-cards-grid {
+                    grid-template-columns: 1fr;
+                  }
+        
+                  .seven-cards-grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
+        
+                @media (min-width: 768px) and (max-width: 1024px) {
+                  .seven-cards-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                  }
+        
+                  .seven-cards-grid>div:last-child {
+                    grid-column: span 2;
+                    max-width: 50%;
+                    margin: 0 auto;
+                  }   }
+
+                                    body {
+                                      font-family: 'Poppins', sans-serif;
+                                    }
+                  
+                                    .card {
+                                      transition: all 0.3s ease;
+                                      border-radius: 0.5rem;
+                                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                    }
+                  
+                                    .card:hover {
+                                      transform: translateY(-5px);
+                                      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                                    }
+                  
+                                    .card:focus-within {
+                                      outline: 2px solid black;
+                                    }
+                  
+                                    .editable {
+                                      outline: none;
+                                      border-radius: 0.25rem;
+                                      padding: 0.5rem;
+                                      transition: background-color 0.2s;
+                                    }
+                  
+                                    .editable:focus {
+                                      background-color: rgba(59, 130, 246, 0.1);
+                                    }
+                  
+                                    .card-image {
+                                      border-radius: 50%;
+                                      width: 80px;
+                                      height: 80px;
+                                      object-fit: cover;
+                                      border: 3px solid white;
+                                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                      margin: 0 auto;
+                                    }
+                  
+                                    @media (max-width: 768px) {
+                                      .four-cards-grid {
+                                        grid-template-columns: 1fr;
+                                      }
+                  
+                                      .seven-cards-grid {
+                                        grid-template-columns: 1fr;
+                                      }
+                                    }
+                  
+                                    @media (min-width: 768px) and (max-width: 1024px) {
+                                      .seven-cards-grid {
+                                        grid-template-columns: repeat(2, 1fr);
+                                      }
+                  
+                                      .seven-cards-grid>div:last-child {
+                                        grid-column: span 2;
+                                        max-width: 50%;
+                                        margin: 0 auto;
+                                      }             }
+
+        .container-fuentes{
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+        
+          .fuentes-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin-bottom: 40px;
+          }
+        
+          .section-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 40px;
+            text-align: center;
+          }
+        
+          .section-header h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          }
+        
+          .content-wrapper {
+            padding: 50px 40px;
+          }
+        
+          .subsection {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 5px solid #2563eb;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+        
+          .subsection:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+          }
+        
+          .subsection h3 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3b82f6;
+          }
+        
+          ol {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+          }
+        
+          ol li {
+            counter-increment: item;
+            margin-bottom: 15px;
+            padding-left: 45px;
+            position: relative;
+            line-height: 1.6;
+            color: #1f2937;
+            font-size: 1rem;
+          }
+        
+          ol li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+          }
+        
+          ol li:hover {
+            color: #2563eb;
+          }
+        
+          @media (max-width: 768px) {
+            .section-header h2 {
+              font-size: 2rem;
+            }
+        
+            .subsection h3 {
+              font-size: 1.5rem;
+            }
+        
+            .content-wrapper {
+              padding: 30px 20px;
+            }
+        
+            .subsection {
+              padding: 20px;
+            }
+        
+            ol li {
+              font-size: 0.95rem;
+            }
+          }
+
+          /* Footer */
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.footer-logo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: darkblue;
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: cyan;
+}
+
+.footer-social {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: darkblue;
+    margin-right: 0.75rem;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-400);
+    font-size: 0.875rem;
+}
+
+/* Botón scroll to top */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 1.5rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::before {
+        left: 60px;
+        border: medium solid var(--gray-300);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+        left: 19px;
+    }
+
+    .right {
+        left: 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .info-boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.info-box ul li {
+    margin-bottom: 1rem;
+}
+
+.info-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Add styles for .survey-sample containers */
+.survey-sample {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--gray-100);
+    border-radius: 0.5rem;
+}
+
+.survey-sample h3 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.survey-sample form>div {
+    margin-bottom: 1.5rem;
+}
+
+.survey-sample label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.survey-sample p[style*="font-weight: 600"] {
+    font-weight: 600;
+}
+
+.survey-sample textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+}
+
+  </style>
+ 
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+    
+            <h1 class="sigma">Σ</h1>
+            <h1 class="sig">Sig</h1>
+            <h1 class="MATH">MATH</h1>
+          </div>
+          <ul class="nav-links">
+            
+            <li><a href="https://sigma-91.github.io/MATH-Science-MX/">MATH Science MX</a></li>
+            <li><a href="https://sigma-91.github.io/Mathematik-Bibliothek-MX/">Mathematik Bibliothek MX</a></li>
+          </ul>
+          <button class="hamburger" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- Banner Principal -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h2>Descubre algunas cosas sobre SigMATH <span class="typed-text" id="typed-element"></span></h2>
+        <p>SigMATH es un sitio gratuito que tiene el objetivo prncipal de apoyar a todos los estudiantes que lo necesiten en matematicas (Aritmetica, Algebra, Geometría, Trigonometría, Geometría Analítica, Calculo Diferencial e Integral, Probabilidad y Estadística), basandonos en fuentes formales y generales las cuales tienen alto renombre en todo Mexico y el mundo, apoyandonos de un profesor experto en el tema.</p>
+
+        
+      </div>
+      <div class="wave"></div>
+    </section>
+
+    <main>
+
+      
+
+      <div class="equipo-IP">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800"></h2>
+        <div class="card bg-white p-6">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/3 mb-4 md:mb-0 flex justify-center md:justify-start">
+              <img src="img/Equipo IP.png" alt="Imagen cuadrada" class="w-48 h-48 object-cover rounded-lg">
+            </div>
+            <div class="md:w-2/3 md:pl-6">
+              <h3 class="text-2xl font-semibold text-magic-blue mb-4">The Informatic Programers (Equipo I.P)</h3>
+              <p class="text-magic-blue editable">
+              El equipo I.P es un equipo conformado por 4 personas, creado por Polytechnic Spider (The Sigma), que tiene
+              como objetivo ayudar la sociedad educativa y estudiantil, que ha pasado por problemas en la enseñanza, fuentes no
+              formales y falta de temas en los planes academicos .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      
+
+      <!-- Dos párrafos adicionales de Lorem Ipsum -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Cual fue nuestra meta?</h2>
+        <p class="text-gray-700 leading-relaxed editable">
+          Nuestra meta es transformar el aprendizaje de las matemáticas en una experiencia accesible y significativa para
+          estudiantes de bachillerato y nivel preuniversitario. Buscamos ofrecer una plataforma integral que, mediante recursos
+          pedagógicos claros y estructurados, no solo facilite la aprobación de asignaturas, sino que también fortalezca la
+          comprensión profunda de los conceptos clave. Dirigimos nuestros esfuerzos especialmente hacia quienes enfrentan
+          dificultades académicas en esta área o han experimentado contratiempos como la reprobación. Para ello, integramos las
+          habilidades especializadas de nuestro equipo —desde la didáctica matemática hasta el diseño instruccional— con el fin de
+          crear herramientas adaptadas a las necesidades individuales. En esencia, aspiramos a ser el puente que conecte el
+          esfuerzo de los estudiantes con el éxito académico, transformando obstáculos en oportunidades de crecimiento.
+
+        </p>
+      </div>
+      
+      <div class="mb-10">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Cual fue nuestro objetivo?</h2>
+        <p class="text-gray-700 leading-relaxed editable">
+          Nuestro objetivo con este proyecto fue crear una plataforma digital en la que los estudiantes puedan apoyarse en
+          conceptos formales y generales, con el fin de que logren aprobar sus asignaturas y comprender con mayor profundidad las
+          materias de matemáticas de nivel bachillerato o preuniversitario. Este espacio está dirigido especialmente a quienes
+          enfrentan dificultades en dichas áreas o incluso han reprobado, aprovechando además las habilidades y conocimientos
+          específicos de cada integrante del equipo para garantizar un aprendizaje efectivo y personalizado.
+        </p>
+      </div>
+
+      <!-- Sección con 4 tarjetas en 2 columnas -->
+      <div class="mb-10">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Integrantes del Equipo I.P</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 four-cards-grid">
+          <!-- Tarjeta 1 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/The Sigma.jpg"
+                alt="Perfil" class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Jedrek Manuel Trujillo Medina</h3>
+            <p class="text-gray-600 editable">
+             Lider y creador del equipo I.P, alias Polytechnic Spider (The Sigma), desarrollador de la parte principal de SigMATH, temarios de matematicas, diseño, marketing y publicidad.
+            </p>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Granados.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Saul Granados Bautista</h3>
+            <p class="text-gray-600 editable">
+              Desarrollador de la parte interactiva, guias de estudio ,encargado de encontrar y verificar las bibliografias generales y administrador del desarrollo de SigMATH.
+            </p>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Uriel.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Uriel Roa Alvarez </h3>
+            <p class="text-gray-600 editable">
+              Desarrollador de la parte inteligente, base de datos, parte del crear encuestas, diseño y estilos de la interfaz principal, la seccion de bibliografias generales y desarrollador de la graficadora de SigMATH.
+            </p>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_960_720.png" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Aldo Alexis Picazo Cambron</h3>
+            <p class="text-gray-600 editable" >
+              Desarrollador de los diagramas de flujo y Entidad-Relacion, calculadora cientifica de SigMATH y diseño de las encuestas principales de SigMATH.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segundo párrafo con Lorem Ipsum -->
+      <div class="mb-10">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Otras personas que aportaron y apoyaron al Proyecto SigMATH</h2>
+        <p class="text-gray-700 leading-relaxed editable">
+         Estas personas fueron de gran ayuda al escuchar que el sitio iba a estar dedicado a las matematicas de nivel bachillerato-preuniversitario, asi que se solicitaron ideas, propuestas y temas que se debian agregar a SigMATH, tambien se les solicito ideas en cuestion del marketing y la publicidad.
+        </p>
+      </div>
+
+      <!-- Sección con 7 tarjetas en grid -->
+      <div class="mb-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 seven-cards-grid">
+          <!-- Tarjeta 1 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Cocal.jpg" alt="Perfil" class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Oscar Yahir Olguin Mondragon</h3>
+            <p class="text-gray-600 editable">
+              Tecnico en Mantenimiento Industrial: Contribución en proponer el desarrollo de la graficadora y calculadora científica, y en múltiples propuestas de
+              desarrollo de marketing.
+            </p>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Mancio.jpeg" alt="Perfil" class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Victor Manuel Mancio Rodriguez</h3>
+            <p class="text-gray-600 editable" >
+              Tecnico en Mantenimiento Industrial: Contribución en aportar múltiples factores de reprobación y en múltiples propuestas de desarrollo de marketing.
+            </p>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Yael.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Cristian Yael Morales Aguilar</h3>
+            <p class="text-gray-600 editable" >
+              Tecnico en Mantenimiento Industrial: Contribución en el desarrollo de manuales de usuario y en múltiples propuestas de desarrollo de marketing.
+            </p>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/diego.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Diego Alexis Cepeda Lopez</h3>
+            <p class="text-gray-600 editable" >
+              Tecnico en Sistemas Automotrices: Contribución en múltiples propuestas de desarrollo de marketing y publicidad, así como también propaganda y proponer ideas sobre los factores de reprobación. 
+            </p>
+          </div>
+
+          <!-- Tarjeta 5 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/pug.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Camilo Omar Menchaca Reyes</h3>
+            <p class="text-gray-600 editable" >
+              Tecnico en Mantenimiento Industrial: Contribución en apoyo en el desarrollo de ideas y propuestas, así como ayuda con el análisis estadístico.
+            </p>
+          </div>
+
+          <!-- Tarjeta 6 -->
+          <div class="card bg-white p-6">
+            <div class="flex justify-center mb-4">
+              <img src="img/Luna.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Andres Ricardo Luna Torres</h3>
+            <p class="text-gray-600 editable" >
+              Tecnico en Mantenimiento Industrial: Contribución en apoyo en el desarrollo de ideas y propuestas en el desarrollo de marketing del proyecto.
+            </p>
+          </div>
+
+          <!-- Tarjeta 7 (centrada en la última fila) -->
+          <div class="card bg-white p-6 lg:col-start-2 lg:col-end-3">
+            <div class="flex justify-center mb-4">
+              <img src="img/Tairi.jpg" alt="Perfil"
+                class="card-image">
+            </div>
+            <h3 class="text-xl font-medium text-center mb-3">Vania Tairi Hernandez Caballero</h3>
+            <p class="text-gray-600 editable" >
+              Tecnica en Mantenimiento Industrial: Contribución en apoyo en el desarrollo de ideas y propuestas, así como ayuda en el desarrollo de la sección de
+              bibliografías.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    
+    <div class="mb-10">
+      
+      <div class="card bg-white p-6">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/3 mb-4 md:mb-0 flex justify-center md:justify-start">
+            <img src="img/villar.png" alt="Imagen cuadrada" class="w-48 h-48 object-cover rounded-lg">
+          </div>
+          <div class="md:w-2/3 md:pl-6">
+            <h3 class="text-2xl font-semibold text-magic-blue mb-4">Prof. Fernando Villar Ramirez</h3>
+            <p class="text-magic-blue editable">
+             Ingeniero en Comunicaciones y Electronica en ESIME Zacatenco del Instituto Politecnico Nacional, especialista en la TV, profesor del Centro de Estudios Cientificos y Tecnologicos 8 Narciso Bassols del Instituto Politecnico Nacional, que nos ha arpotado la idea del desarrollo de introduccion a la fisica, por medio de su experiencia y tambien por un grupo del cual fue tutor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Sección final con tarjeta ancha -->
+      <div class="mb-10">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">La persona que mas ha aportado a SigMATH</h2>
+        <div class="card bg-white p-6">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/3 mb-4 md:mb-0 flex justify-center md:justify-start">
+              <img src="img/Benja.png" alt="Imagen cuadrada"
+                class="w-48 h-48 object-cover rounded-lg">
+            </div>
+            <div class="md:w-2/3 md:pl-6">
+              <h3 class="text-2xl font-semibold text-magic-blue mb-4">Prof. Benjamín Hurtado Camarena</h3>
+              <p class="text-magic-blue editable" >
+                Ingeniero civil egresado de la ESIA de Zacatenco del Instituto Politecnico Nacional, profesor experimentado en matemáticas generales, por la mas valiosa contribucion en aportar múltiples factores de reprobación, el factor principal de reprobación, temas descartados del los planes
+                académicos del Instituto Politécnico Nacional, falacias, conceptos generales, formalidad e informalidades en los temas,
+                libros generales de alto renombre, verificación de bibliografías no confiables, temas preliminares de la ciencia
+                matemática por medio de su experiencia como profesor de bachillerato.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-fuentes">
+        <!-- Sección de Fuentes de Información -->
+        <div class="fuentes-section">
+          <div class="section-header">
+            <h2>Fuentes de Información</h2>
+          </div>
+      
+          <div class="content-wrapper">
+            <!-- Bibliografías Generales -->
+            <div class="subsection">
+              <h3>Bibliografías Generales</h3>
+              <ol>
+                <li>Gauchat, J. (2017) El gran libro de HTML5, CSS3 Y JavaScript, Marcombo.</li>
+                <li>Granville, W. (1982) Cálculo Diferencial e Integral, Limusa. Noriega Ediciones.</li>
+                <li>Taylor, H. y Wade, T. (1981) Cálculo Diferencial e Integral, Limusa Noriega Ediciones.</li>
+                <li>Baldor, A. (1980) Álgebra, Compañía Cultural Editora y Distribuidora de Textos Americanos, S.A.</li>
+                <li>Granville, W., et al., (1954) Trigonometría Plana y Esférica con Tablas Trigonométricas.</li>
+                <li>Baldor, A (1985) Aritmética Teórico Práctica, Compañía Cultural Editora y Distribuidora de Textos
+                  Americanos, S.A.</li>
+                <li>H. Lehmann, C. (2003) Geometría Analítica, Limusa Noriega Ediciones.</li>
+                <li>Spiegel, M. (1976) Probabilidad y Estadística Serie Schaum, McGraw-Hill.</li>
+                <li>Yamane, T.(1979) Estadística, Harva, S.A de C.V</li>
+                <li>Rich, B. (1971) Geometría Plana con Coordenadas Serie Schaum, McGraw-Hill.</li>
+                <li>Ayres Jr, F (1970) Trigonometría Plana y Esférica Serie Schaum, McGraw-Hill.</li>
+                <li>H. Kindle, J (1950) Geometría Analítica Plana y del Espacio Serie Schaum, McGraw-Hill.</li>
+                <li>Lipschutz, S (1971) Probabilidad Serie Schaum, McGraw-Hill.</li>
+                <li>P. Phillips, E. (1988) Álgebra con Aplicaciones, Harla.</li>
+                <li>Baldor, A (2004) Geometría Plana y del Espacio con una Introducción a la Trigonometría, Compañía Cultural
+                  Editora y Distribuidora de Textos Americanos, S.A.</li>
+                <li>Hooper A. y Griswold A. (1973) Trigonometría, Publicaciones Cultural S.A.</li>
+                <li>Stewart, J. (2012), Cálculo de una Variable, Cengage Learning.</li>
+                <li>Stewart, J. (2012), Cálculo de Varias Variables, Cengage Learning.</li>
+                <li>Buendía, E. (1989) Matemáticas para Futuros Ingenieros, Contadores, Médicos y Licenciados. Trigonometría,
+                  Centro de Ciencias de la Atmósfera.</li>
+                <li>García Colomé, P, et al (1984), Cálculo Diferencial e Integral, Programa del Libro de Texto Universitario.
+                </li>
+                <li>Anfossi, A. & Flores Meyer, M. (1954), Cálculo Diferencial e Integral, Editorial Progreso S.A. Félix
+                  Estrada, A., et al (1974), Lecciones de Física, C.E.S.C.A.</li>
+                <li>White, H.(1990), Física Descriptiva, Reverte Ediciones de S.A. de C.V.</li>
+              </ol>
+            </div>
+      
+            <!-- Otras Fuentes -->
+            <div class="subsection">
+              <h3>Otras Fuentes</h3>
+              <ol>
+                <li>Apunte tomado de: Prof. Isaías Lima Zempoalteca, Apuntes de Probabilidad y Estadística, Centro de Estudios
+                  Científicos y Tecnológicos 8 Narciso Bassols, 2025.</li>
+                <li>Apunte tomado de: Prof. Isaías Lima Zempoalteca, Cálculo Integral, Centro de Estudios Científicos y
+                  Tecnológicos 8 Narciso Bassols, 2024.</li>
+                <li>Fernández, J. & Coronado, G. (2013). Fisicalab, https://www.fisicalab.com/</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <h2>SigMATH</h2>
+            </div>
+            <p>Plataforma educativa dedicada a facilitar el aprendizaje y la enseñanza de las matemáticas a través de
+              recursos de calidad.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/share/12K8jJA2kHZ/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.threads.net/@polytechnicspider"><i class="fab fa-threads"></i></a>
+              <a href="https://www.instagram.com/polytechnicspider?igsh=MWZvdzJpbGtoeGkwNA=="><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@SigMATH-project"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="https://sigma-91.github.io/Mathematik-Bibliothek-MX/">Mathematik Bibliothek MX</a></li>
+              <!-- Removed the "Encuestas" link -->
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Recursos</h3>
+            <ul class="footer-links">
+              <li><a href="https://youtube.com/@sigmath-project?si=1Tat_fQNVxn2WLLc">Videotutoriales</a></li>
+              <li><a href="https://www.geogebra.org/graphing">Graficadora Geogebra</a></li>
+              <li><a href="https://www.instagram.com/sigma.education.91?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Sigma education MX</a></li>
+    
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul class="footer-links">
+              <li><i class="fas fa-envelope"></i> sigmathproject@gmail.com</li>
+              <li><i class="fas fa-phone"></i> +52 56 6136 1607</li>
+              <li><i class="fas fa-map-marker-alt"></i> Ciudad de Mexico, MX</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 SigMATH - Todos los derechos reservados | Diseñado con <i class="fas fa-heart"
+              style="color: var(--accent);"></i> para amantes de las matemáticas</p>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Botón Scroll to Top -->
+    <div class="scroll-top" id="scroll-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+  <script id="app-script">
+    // Guardar los textos originales al cargar la página
+    const originalTexts = {};
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Guardar todos los textos originales de los elementos editables
+      const editableElements = document.querySelectorAll('.editable');
+      editableElements.forEach((element, index) => {
+        originalTexts[index] = element.innerHTML.trim();
+      });
+
+      // Configurar el botón de reinicio - REMOVED
+    });
+
+    // Menú móvil
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+
+      mobileMenuBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('show');
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+
+      // Mostrar/ocultar botón para volver arriba
+        window.addEventListener('scroll', function () {
+          const scrollTop = document.querySelector('.scroll-top');
+          if (window.scrollY > 300) {
+            scrollTop.style.opacity = '1';
+          } else {
+            scrollTop.style.opacity = '0';
+          }
+        });
+  </script>
+</body>
+
+</html>
